@@ -1,0 +1,17 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+    font-family: 'TOTKTitle';
+    src: url('../assets/fonts/TOTKTitlePlain.otf') format('truetype');
+    font-weight: normal;
+    font-stretch: normal;
+}
+
+@font-face {
+    font-family: 'TOTKTitleDeco';
+    src: url('../assets/fonts/TOTKTitleDeco.otf') format('truetype');
+    font-weight: normal;
+    font-stretch: normal;
+}

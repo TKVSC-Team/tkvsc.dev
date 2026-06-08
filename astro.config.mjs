@@ -2,25 +2,33 @@
 import { defineConfig } from 'astro/config';
 import starlight from '@astrojs/starlight';
 
+import react from '@astrojs/react';
+
+import tailwindcss from '@tailwindcss/vite';
+
 // https://astro.build/config
 export default defineConfig({
-	integrations: [
-		starlight({
-			title: 'My Docs',
-			social: [{ icon: 'github', label: 'GitHub', href: 'https://github.com/withastro/starlight' }],
-			sidebar: [
-				{
-					label: 'Guides',
-					items: [
-						// Each item here is one entry in the navigation menu.
-						{ label: 'Example Guide', slug: 'guides/example' },
-					],
-				},
-				{
-					label: 'Reference',
-					items: [{ autogenerate: { directory: 'reference' } }],
-				},
-			],
-		}),
-	],
+  integrations: [starlight({
+      title: 'TKVSC',
+      social: [{ icon: 'github', label: 'GitHub', href: 'https://github.com/TKVSC-Team/totk-vscode' }],
+      sidebar: [
+          {
+              label: 'Guides',
+              items: [
+                  { label: 'Game Dump Guide', slug: 'guides/game-dump-guide' },
+                  { label: 'Setup Guide', slug: 'guides/setup-guide'},
+                  { label: 'Simple Attribute Mod Guide', slug: 'guides/simple-attribute-mod'},
+
+              ],
+          },
+          {
+              label: 'Reference',
+              items: [{ autogenerate: { directory: 'reference' } }],
+          },
+      ],
+      }), react()],
+
+  vite: {
+    plugins: [tailwindcss()],
+  },
 });

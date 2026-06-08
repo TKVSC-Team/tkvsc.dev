@@ -1,0 +1,215 @@
+---
+import { Image } from 'astro:assets';
+import heroBanner from '../assets/hero-banner.png';
+import logoImage from '../assets/logo.png';
+import '../styles/global.css';
+import '../styles/index.css';
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TKVSC | Home</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/@fontsource/cascadia-code/index.css" rel="stylesheet">
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+    <a href="/" class="nav-logo">
+        <Image src={logoImage} alt="TKVSC Logo" width={36} height={36} />
+        <span class="nav-wordmark">TKVSC</span>
+    </a>
+    <ul class="nav-links">
+        <li><a href="/guides/game-dump-guide/">Docs</a></li>
+        <li><a href="https://github.com/TKVSC-Team/totk-vscode/releases/latest">Download</a></li>
+        <li><a href="https://github.com/TKVSC-Team/totk-vscode">GitHub</a></li>
+        <li><a href="https://discord.gg/BbVXenRFVc">Discord</a></li>
+    </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+    <Image src={heroBanner} alt="" class="hero-bg" width={1920} height={1080} />
+    <div class="hero-gradient"></div>
+
+    <div class="hero-content">
+        <Image src={logoImage} alt="TKVSC" class="hero-logo" width={130} height={130} />
+        <p class="hero-eyebrow">Tears of the Kingdom VSCode</p>
+        <h1 class="hero-title">TKVSC</h1>
+        <p class="hero-subtitle">A Visual Studio Code extension for editing and browsing TotK game files. Canonically Amazing.</p>
+        <div class="hero-ctas">
+            <a href="https://github.com/TKVSC-Team/totk-vscode/releases/latest" class="btn-primary">Download Extension</a>
+            <a href="/guides/game-dump-guide/" class="btn-secondary">Read the Docs</a>
+        </div>
+    </div>
+
+    <div class="scroll-hint">
+        <span>Scroll</span>
+        <div class="scroll-arrow"></div>
+    </div>
+</section>
+
+<!-- FEATURES -->
+<section class="features-section">
+    <div class="features-inner">
+        <div class="features-intro reveal">
+            <p class="section-label">Capabilities</p>
+            <h2 class="section-title">Everything you need to mod TotK</h2>
+            <p class="section-body">TKVSC centralizes your modding workflow — browse, edit, and manage game files without leaving VS Code.</p>
+        </div>
+
+        <div class="feature-grid">
+            <div class="feature-card reveal">
+                <h3>Archive Editing</h3>
+                <p>Browse and edit subfiles within SARC and BNTX archives directly - including nested archives like <code>.sarc</code> inside <code>.pack</code>.</p>
+            </div>
+            <div class="feature-card reveal">
+                <h3>Multi-Format Text Editor</h3>
+                <p>Native support for BYML, BGYML, AAMP, MSBT, ASB, BAEV, XLINK, PCHTXT, and TKMM config files - all editable in one place.</p>
+            </div>
+            <div class="feature-card reveal">
+                <h3>Dump Browser</h3>
+                <p>Browse your full TotK game dump in read-only mode. Right-click any file to pull it into a mod project folder.</p>
+            </div>
+            <div class="feature-card reveal">
+                <h3>Deep File Search</h3>
+                <p>Search romfs contents including filenames inside of SARCs, so nothing stays buried in your dump.</p>
+            </div>
+            <div class="feature-card reveal">
+                <h3>Texture Previewing</h3>
+                <p>Preview <code>.bntx</code> subfiles and <code>.txtg</code> textures as PNGs without switching to another tool.</p>
+            </div>
+            <div class="feature-card reveal">
+                <h3>TKMM Integration</h3>
+                <p>Visual editor for <code>.tkproj</code> files and full compatibility with the TKMM mod manager ecosystem.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- DIVIDER -->
+<div class="rune-divider"><div class="rune-diamond"></div></div>
+
+<!-- CANONICAL PATH -->
+<section>
+    <div class="canonical-section">
+        <div class="reveal">
+            <p class="section-label">Signature Feature</p>
+            <h2 class="section-title">Canonical Path Saving</h2>
+            <p class="section-body">When you modify a file in TotK, that same file often appears in many different actor packs. Without TKVSC, you'd have to update every single copy manually.</p>
+            <br>
+            <p class="section-body">TKVSC builds a database of all canonical paths in your dump and automatically propagates your changes to every instance, pulling files from the dump as needed.</p>
+        </div>
+        <div class="canonical-visual reveal">
+            <p style="font-family:'Cinzel',serif; font-size:0.65rem; letter-spacing:0.3em; color:var(--stone); text-transform:uppercase; margin-bottom:1rem; text-align:center;">Champion's Leathers — All Upgrade Levels</p>
+            <div class="comparison-table">
+                <div class="comparison-row">
+                    <div class="comparison-header bad">Without TKVSC</div>
+                    <div class="comparison-header good">With TKVSC</div>
+                </div>
+                <div class="comparison-row">
+                    <div class="comparison-cell bad"><span class="count-badge bad">15</span><br>file modifications</div>
+                    <div class="comparison-cell good"><span class="count-badge good">5</span><br>file modifications</div>
+                </div>
+                <div class="comparison-row">
+                    <div class="comparison-cell bad">Manual copy-paste across every actor pack</div>
+                    <div class="comparison-cell good">Automatic sync to all canonical instances</div>
+                </div>
+                <div class="comparison-row">
+                    <div class="comparison-cell bad">Easy to miss a copy and break things ingame</div>
+                    <div class="comparison-cell good">Consistent, reliable, and fast</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- DIVIDER -->
+<div class="rune-divider"><div class="rune-diamond"></div></div>
+
+<!-- SETUP -->
+<section class="setup-section">
+    <div class="setup-inner">
+        <div class="reveal">
+            <p class="section-label">Get Started</p>
+            <h2 class="section-title">Up and running in minutes</h2>
+            <p class="section-body" style="margin:0 auto;">TKVSC requires a valid TOTK game dump. If you haven't done that yet, follow our Game Dump Guide first.</p>
+        </div>
+        <div class="steps">
+            <div class="step reveal">
+                <div class="step-num">01</div>
+                <div class="step-content">
+                    <h4>Install Python 3.12</h4>
+                    <p>Download <a href="https://www.python.org/downloads/release/python-31210/">Python 3.12</a> and ensure it's accessible from your system PATH. Linux users will also need <code>python3.12-venv</code>.</p>
+                </div>
+            </div>
+            <div class="step reveal">
+                <div class="step-num">02</div>
+                <div class="step-content">
+                    <h4>Install the Extension</h4>
+                    <p>Download the latest <code>.vsix</code> from the <a href="https://github.com/TKVSC-Team/totk-vscode/releases/latest">GitHub Releases page</a> and install it in VS Code via <em>Extensions → Install from VSIX</em>.</p>
+                </div>
+            </div>
+            <div class="step reveal">
+                <div class="step-num">03</div>
+                <div class="step-content">
+                    <h4>Point it at your dump</h4>
+                    <p>On first launch, follow the prompt to select your romfs dump path. TKVSC will index your files and you're ready to mod.</p>
+                </div>
+            </div>
+        </div>
+        <div class="reveal" style="margin-top:2.5rem;">
+            <a href="https://gamebanana.com/tuts/19858" class="btn-primary">Game Dump Guide</a>
+        </div>
+    </div>
+</section>
+
+<!-- COMMUNITY -->
+<section>
+    <div class="community-section reveal">
+        <p class="section-label">Community</p>
+        <h2 class="section-title">Join our community</h2>
+        <p class="section-body" style="margin:0 auto;">Get help, share your mods, follow development, and connect with us on Discord.</p>
+        <a href="https://discord.gg/vwPnX2uB8s " class="discord-btn">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057c.002.022.015.043.03.055a19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028 14.09 14.09 0 0 0 1.226-1.994.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03z"/></svg>
+            Join our Discord
+        </a>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <span class="footer-brand">© 2025 TKVSC Team — GPL-3.0 License</span>
+    <ul class="footer-links">
+        <li><a href="/guides/game-dump-guide/">Docs</a></li>
+        <li><a href="https://github.com/TKVSC-Team/totk-vscode">GitHub</a></li>
+        <li><a href="https://gamebanana.com/tools/22893">GameBanana</a></li>
+        <li><a href="https://discord.gg/vwPnX2uB8s ">Discord</a></li>
+    </ul>
+</footer>
+
+<script>
+    // Intersection Observer for reveal animations
+    const reveals = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry, i) => {
+            if (entry.isIntersecting) {
+                // slight stagger for grid children
+                const delay = entry.target.closest('.feature-grid') ?
+                    Array.from(entry.target.parentElement.children).indexOf(entry.target) * 80 : 0;
+                setTimeout(() => entry.target.classList.add('visible'), delay);
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.12 });
+    reveals.forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
